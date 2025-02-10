@@ -3,27 +3,22 @@ from numpy import random
 
 #using a loop for the Game
 while True:
+    emojis = {
+        'r': '🪨',
+        'p': '📄',
+        's': '✂️'
+    }
+    choices = ('r','p','s')
     user_choice = input("Rock, paper or Scissors (r/p/s) ?: ").lower()
-    computer_choice = random.choice(['r','p','s'])
-
-    # For user's choice
-    if user_choice == 'r':
-        print("You chose r")
-    elif user_choice == 's':
-        print("You chose s")
-    elif user_choice == 'p':
-        print("You chose p")
-    else:
-        print("Invalid choice")
+    if  user_choice not in choices:
+        print("Invalid choice") # better way of handling the error
         continue
+    
+    computer_choice = random.choice(choices)
 
-    #For computer's choice
-    if computer_choice == 'r':
-        print("Computer chose r")
-    elif computer_choice == 's':
-        print("Computer chose s")
-    else:
-        print("Computer chose p")
+    #Printing out the choices of the user and computer
+    print(f"Your chose {emojis[user_choice]}")
+    print(f"Computer chose {emojis[computer_choice]}")
 
     if user_choice == computer_choice:
         print("Tie!")
