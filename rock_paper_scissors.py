@@ -1,13 +1,18 @@
 # Rock paper Scissors Game
 from numpy import random
 
+# Defining our constants
+ROCK = 'r'
+PAPER = 'p'
+SCISSORS = 's'
 
+#Dictionary for storing our variables
 emojis = {
-        'r': '🪨',
-        'p': '📄',
-        's': '✂️'
+        ROCK: '🪨',
+        PAPER: '📄',
+        SCISSORS: '✂️'
     }
-choices = ('r','p','s')
+choices = tuple(emojis.keys()) # avoids repetition of the words
 
 #Users choice fn
 def get_user_choice():
@@ -27,7 +32,7 @@ def display_choices(user_choice, computer_choice):
 def determine_winner(user_choice, computer_choice):
     if user_choice == computer_choice:
         print("Tie!")
-    elif (user_choice == 'r' and computer_choice == 's') or (user_choice == 's' and computer_choice == 'p') or (user_choice == 'p' and computer_choice == 'r'):
+    elif (user_choice == ROCK and computer_choice == SCISSORS) or (user_choice == SCISSORS and computer_choice == PAPER) or (user_choice == PAPER and computer_choice == ROCK):
         print("You win!")
     else:
         print("You lose!")
@@ -42,7 +47,7 @@ def playing_game():
 
    determine_winner(user_choice,computer_choice)
 
-   continue_playing = input("Continue (y/n) ?: ").lower()
+   continue_playing = input("Continue (type 'n' to stop) ?: ").lower()
    if continue_playing == 'n':
         break
 
