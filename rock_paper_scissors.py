@@ -1,9 +1,13 @@
-# Rock paper Scissors Game
-from numpy import random
+
 
 # Defining our constants
 ROCK = 'r'
 PAPER = 'p'
+#
+# R ock paper Scissors Game
+from numpy import random
+Rock paper Scissors Game
+from numpy import random
 SCISSORS = 's'
 
 #Dictionary for storing our variables
